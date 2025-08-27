@@ -1,0 +1,229 @@
+[
+  {
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+      "name": "Электроника",
+      "slug": "electronics",
+      "image": null
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+      "name": "Одежда",
+      "slug": "clothing",
+      "image": "categories/clothing.jpg"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+      "name": "Дом и кухня",
+      "slug": "home-kitchen",
+      "image": null
+    }
+  },
+  {
+    "model": "products.subcategory",
+    "pk": 1,
+    "fields": {
+      "name": "Смартфоны",
+      "slug": "smartphones",
+      "image": null,
+      "category": 1
+    }
+  },
+  {
+    "model": "products.subcategory",
+    "pk": 2,
+    "fields": {
+      "name": "Ноутбуки",
+      "slug": "laptops",
+      "image": "subcategories/laptops.jpg",
+      "category": 1
+    }
+  },
+  {
+    "model": "products.subcategory",
+    "pk": 3,
+    "fields": {
+      "name": "Наушники",
+      "slug": "headphones",
+      "image": null,
+      "category": 1
+    }
+  },
+  {
+    "model": "products.subcategory",
+    "pk": 4,
+    "fields": {
+      "name": "Мужская одежда",
+      "slug": "men-clothing",
+      "image": "subcategories/men_clothing.jpg",
+      "category": 2
+    }
+  },
+  {
+    "model": "products.subcategory",
+    "pk": 5,
+    "fields": {
+      "name": "Женская одежда",
+      "slug": "women-clothing",
+      "image": "subcategories/women_clothing.jpg",
+      "category": 2
+    }
+  },
+  {
+    "model": "products.subcategory",
+    "pk": 6,
+    "fields": {
+      "name": "Кухонная техника",
+      "slug": "kitchen-appliances",
+      "image": "subcategories/kitchen_appliances.jpg",
+      "category": 3
+    }
+  },
+  {
+    "model": "products.subcategory",
+    "pk": 7,
+    "fields": {
+      "name": "Посуда",
+      "slug": "tableware",
+      "image": "subcategories/tableware.jpg",
+      "category": 3
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "iPhone 15 Pro",
+      "slug": "iphone-15-pro",
+      "subcategory": 1,
+      "price": "999.00",
+      "image_small": "products/iphone15_small.jpg",
+      "image_medium": "products/iphone15_medium.jpg",
+      "image_large": "products/iphone15_large.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "name": "Samsung Galaxy S23",
+      "slug": "samsung-galaxy-s23",
+      "subcategory": 1,
+      "price": "899.00",
+      "image_small": null,
+      "image_medium": "products/samsung_s23_medium.jpg",
+      "image_large": null
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "name": "MacBook Air M2",
+      "slug": "macbook-air-m2",
+      "subcategory": 2,
+      "price": "1199.00",
+      "image_small": null,
+      "image_medium": null,
+      "image_large": null
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "name": "Sony WH-1000XM5",
+      "slug": "sony-wh-1000xm5",
+      "subcategory": 3,
+      "price": "349.00",
+      "image_small": "products/sony_headphones_small.jpg",
+      "image_medium": "products/sony_headphones_medium.jpg",
+      "image_large": "products/sony_headphones_large.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "name": "Мужские джинсы Levi's",
+      "slug": "levis-mens-jeans",
+      "subcategory": 4,
+      "price": "89.00",
+      "image_small": "products/levis_jeans_small.jpg",
+      "image_medium": null,
+      "image_large": "products/levis_jeans_large.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "name": "Женское платье Zara",
+      "slug": "zara-women-dress",
+      "subcategory": 5,
+      "price": "59.00",
+      "image_small": "products/zara_dress_small.jpg",
+      "image_medium": "products/zara_dress_medium.jpg",
+      "image_large": "products/zara_dress_large.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "name": "Кофемашина DeLonghi",
+      "slug": "delonghi-coffee-machine",
+      "subcategory": 6,
+      "price": "499.00",
+      "image_small": "products/coffee_machine_small.jpg",
+      "image_medium": "products/coffee_machine_medium.jpg",
+      "image_large": "products/coffee_machine_large.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+      "name": "Набор кастрюль Tefal",
+      "slug": "tefal-cookware-set",
+      "subcategory": 7,
+      "price": "199.00",
+      "image_small": "products/cookware_set_small.jpg",
+      "image_medium": "products/cookware_set_medium.jpg",
+      "image_large": "products/cookware_set_large.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+      "name": "Xiaomi Redmi Note 12",
+      "slug": "xiaomi-redmi-note-12",
+      "subcategory": 1,
+      "price": "299.00",
+      "image_small": null,
+      "image_medium": null,
+      "image_large": null
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+      "name": "Мужская футболка Nike",
+      "slug": "nike-mens-t-shirt",
+      "subcategory": 4,
+      "price": "35.00",
+      "image_small": null,
+      "image_medium": null,
+      "image_large": null
+    }
+  }
+]
