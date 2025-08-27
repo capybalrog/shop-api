@@ -2,11 +2,9 @@ import pytest
 from django.urls import reverse
 from rest_framework.status import (
     HTTP_200_OK as OK,
-    HTTP_201_CREATED as CREATED,
     HTTP_204_NO_CONTENT as NO_CONTENT,
     HTTP_400_BAD_REQUEST as BAD_REQUEST,
     HTTP_401_UNAUTHORIZED as UNAUTHORIZED,
-    HTTP_404_NOT_FOUND as NOT_FOUND
 )
 
 from products.models import CartProduct

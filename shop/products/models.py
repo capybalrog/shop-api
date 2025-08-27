@@ -143,7 +143,6 @@ class Product(models.Model):
     def short_url(self):
         return f'products/{self.slug}/'
 
-
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)

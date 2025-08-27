@@ -17,7 +17,7 @@ ERRORS = {
 
 
 MAGIC_NUMBERS = {
-    'count':{
+    'count': {
         'max_decimal_digits': 10,
         'max_decimal_places': 2,
         'max_length': 150,

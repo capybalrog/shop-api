@@ -1,5 +1,6 @@
 from django.utils.html import format_html
 
+
 def get_image_preview(obj, field_name='image'):
     """Функция для вывода превью картинки в админке."""
     image_field = getattr(obj, field_name, None)

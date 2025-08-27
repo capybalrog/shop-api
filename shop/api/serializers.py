@@ -133,19 +133,6 @@ class ProductSerializer(serializers.ModelSerializer):
         return obj.short_url
 
 
-class SubCategoryWithProductsSerializer(SubCategorySerializer):
-    """Сериализатор для подкатегорий с товарами."""
-
-    products = ProductSerializer(many=True, read_only=True)
-
-    class Meta(SubCategorySerializer.Meta):
-        model = Category
-        fields = SubCategorySerializer.Meta.fields + [
-            'products'
-        ]
-        read_only_fields = fields
-
-
 class CartProductSerializer(serializers.ModelSerializer):
     """Сериализатор для товаров в корзине."""
 

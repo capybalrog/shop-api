@@ -4,6 +4,7 @@ from django.db import models
 
 from users.consts import ADMIN, ERRORS, MAGIC_NUMBERS, USER_ROLES
 
+
 class User(AbstractUser):
     """
     Модель пользователя.
@@ -48,7 +49,6 @@ class User(AbstractUser):
         ordering = ('-date_joined',)
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'
-
 
     def __str__(self):
         return self.username[:MAGIC_NUMBERS['count']['truncated_str']]

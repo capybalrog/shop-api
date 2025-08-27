@@ -1,7 +1,6 @@
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-
 from .views import (
     CategoryViewSet,
     CartViewSet,
@@ -24,8 +23,8 @@ urlpatterns = [
         '<slug:category_slug>/'
         '<slug:subcategory_slug>/'
         '<slug:product_slug>/',
-         product_redirect,
-         name='product-redirect'
-        ),
+        product_redirect,
+        name='product-redirect'
+    ),
     path('', include(router.urls)),
 ]
