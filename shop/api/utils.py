@@ -4,7 +4,7 @@ from rest_framework.status import HTTP_200_OK as OK
 
 
 def paginated_response(queryset, request, serializer_class):
-    """Функция для пагинации"""
+    """Функция для пагинации."""
     paginator = PageNumberPagination()
     page = paginator.paginate_queryset(queryset, request)
 

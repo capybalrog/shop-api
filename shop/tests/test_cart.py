@@ -2,6 +2,7 @@ import pytest
 from django.urls import reverse
 from rest_framework.status import (
     HTTP_200_OK as OK,
+    HTTP_201_CREATED as CREATED,
     HTTP_204_NO_CONTENT as NO_CONTENT,
     HTTP_400_BAD_REQUEST as BAD_REQUEST,
     HTTP_401_UNAUTHORIZED as UNAUTHORIZED,
@@ -20,7 +21,7 @@ def assert_empty(cart_response):
     assert len(cart_response.data['products']) == 0
 
 
-def test_get_empty_cart(owner_client, cart):
+def test_get_empty_cart(owner_client):
     """Авторизованный пользователь получает корзину."""
     url = reverse('cart-list')
     response = owner_client.get(url)
@@ -29,12 +30,38 @@ def test_get_empty_cart(owner_client, cart):
     assert_empty(response)
 
 
-def test_get_cart_with_no_auth(client, cart):
+def test_get_cart_with_no_auth(client):
     """Неавторизованный пользователь стучится в корзину."""
     url = reverse('cart-list')
     response = client.get(url)
 
     assert response.status_code == UNAUTHORIZED
+
+
+def test_add_product_to_cart(owner_client, product1):
+    """Пользователь добавляет товар в корзину."""
+    cart_url = reverse('cart-list')
+    initial_response = owner_client.get(cart_url)
+    assert_empty(initial_response)
+
+    add_url = reverse(
+        'products-to-cart',
+        kwargs={'slug': product1.slug}
+    )
+    data = {'quantity': 2}
+    response = owner_client.post(add_url, data)
+
+    assert response.status_code == CREATED
+    cart_response = owner_client.get(cart_url)
+
+    assert cart_response.status_code == OK
+    assert cart_response.data['total_quantity'] == 2
+    assert cart_response.data['total_price'] == '200.00'
+    assert len(cart_response.data['products']) == 1
+    assert cart_response.data[
+        'products'
+    ][0]['product']['slug'] == product1.slug
+    assert cart_response.data['products'][0]['quantity'] == 2
 
 
 def test_update_cart_item_quantity(owner_client, cart_product):
