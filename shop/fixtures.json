@@ -165,7 +165,7 @@
     "model": "products.product",
     "pk": 6,
     "fields": {
-      "name": "Женское платье Zara",
+      "name": "Платье Zara",
       "slug": "zara-women-dress",
       "subcategory": 5,
       "price": "59.00",

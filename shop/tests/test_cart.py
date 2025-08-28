@@ -8,10 +8,37 @@ from rest_framework.status import (
     HTTP_401_UNAUTHORIZED as UNAUTHORIZED,
 )
 
-from products.models import CartProduct
+from products.models import (
+    CartProduct,
+    Category
+)
 
 
 pytestmark = pytest.mark.django_db
+
+
+def assert_pagination(response):
+    """Вспомогательная функция для проверки пагинации."""
+    assert 'count' in response.data
+    assert 'next' in response.data
+    assert 'previous' in response.data
+    assert 'results' in response.data
+    assert len(response.data['results']) == 10
+
+
+def test_category_list_pagination(client):
+    """Пользователь получает список категорий."""
+    for i in range(15):
+        Category.objects.create(
+            name=f'Category {i}',
+            slug=f'category-{i}'
+        )
+
+    url = reverse('categories-list')
+    response = client.get(url)
+
+    assert response.status_code == OK
+    assert_pagination(response)
 
 
 def assert_empty(cart_response):
